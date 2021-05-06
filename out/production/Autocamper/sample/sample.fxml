@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button fx:id="btnBookAutocamper" layoutX="29.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="115.0" text="Book Autocamper" />
+      <Button fx:id="btnOrdreHistorik" layoutX="177.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="115.0" text="Ordre historik" AnchorPane.rightAnchor="308.0" AnchorPane.topAnchor="328.0" />
+      <Button fx:id="btnKundeListe" layoutX="317.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="115.0" text="Kunde liste" />
+      <Button fx:id="btnKøreKort" layoutX="461.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="58.0" prefWidth="115.0" text="Registrer kørekort" />
+      <AnchorPane fx:id="MainPage" prefHeight="313.0" prefWidth="600.0" style="-fx-background-color: white;">
+         <children>
+            <Pane fx:id="pnlVælgAutocamper" prefHeight="313.0" prefWidth="600.0" style="-fx-background-color: white;">
+               <children>
+                  <DatePicker layoutX="36.0" layoutY="23.0" promptText="Vælg start dato" />
+                  <DatePicker layoutX="36.0" layoutY="65.0" promptText="Vælg slut dato" />
+                  <TableView fx:id="tblViewAutocamper" layoutX="242.0" prefHeight="313.0" prefWidth="358.0" />
+                  <Button layoutX="65.0" layoutY="221.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="115.0" text="Vælg Autocamper" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlKundeListe" prefHeight="313.0" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TextField fx:id="txtfldOrdreSøgefelt" layoutX="7.0" layoutY="2.0" prefHeight="25.0" prefWidth="198.0" promptText="Indtast Ordre ID i søgefelt" />
+                  <TableView fx:id="tblViewKundeListe" layoutX="205.0" layoutY="-3.0" prefHeight="315.0" prefWidth="393.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlOrdreHistorik" prefHeight="313.0" prefWidth="600.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TableView layoutY="34.0" prefHeight="279.0" prefWidth="600.0" />
+                  <TextField fx:id="txtfldOrdrehistorikSøgeFelt" alignment="CENTER" layoutX="14.0" layoutY="2.0" promptText="Indtast Ordre ID" />
+                  <Button fx:id="btnSletOrdre" layoutX="480.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="31.0" prefWidth="115.0" text="Slet Ordre" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlKørekort" prefHeight="313.0" prefWidth="600.0" style="-fx-background-color: white;">
+               <children>
+                  <TextField fx:id="txtfldOrdreID" alignment="CENTER" layoutX="218.0" layoutY="97.0" promptText="Ordre ID" />
+                  <TextField fx:id="txtfldKørekortID" alignment="CENTER" layoutX="218.0" layoutY="138.0" promptText="Kørekort ID" />
+                  <TextField fx:id="txtfldUdstedelsesDato" alignment="CENTER" layoutX="218.0" layoutY="178.0" promptText="Udstedelses Dato" />
+                  <Label layoutX="228.0" layoutY="46.0" text="Registrer Kørekort">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnTilføjKørekort" layoutX="238.0" layoutY="235.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="38.0" prefWidth="108.0" text="Tilføj Kørekort" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlBookAutocamper" prefHeight="313.0" prefWidth="600.0" style="-fx-background-color: white;">
+               <children>
+                  <TextField layoutX="47.0" layoutY="53.0" promptText="Navn" />
+                  <TextField layoutX="47.0" layoutY="86.0" promptText="Addresse" />
+                  <TextField layoutX="47.0" layoutY="153.0" promptText="E-mail" />
+                  <TextField layoutX="47.0" layoutY="186.0" promptText="Tlf nummer" />
+                  <Label layoutX="58.0" layoutY="21.0" prefHeight="17.0" prefWidth="127.0" text="Kunde Oplysning">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnBekræftReservation" layoutX="58.0" layoutY="243.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="48.0" prefWidth="127.0" text="Bekræft Reservation" />
+                  <TextArea fx:id="txtAreaOrdreBekræftelse" layoutX="325.0" layoutY="25.0" prefHeight="255.0" prefWidth="239.0" promptText="Ordre Bekræftelse">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </TextArea>
+                  <TextField layoutX="47.0" layoutY="118.0" promptText="Postnummer" />
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
