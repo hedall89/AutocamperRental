@@ -8,7 +8,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Pane;
-import org.omg.CORBA.INTERNAL;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -88,7 +87,7 @@ public class Controller {
                 autocamperListe();
             } else if (event.getSource() == btnVælgAutoCamper) {
                 pnlBookAutocamper.toFront();
-                lavUdlejning();
+                lavOrdre();
             }
         }
     }
@@ -135,7 +134,7 @@ public class Controller {
         }
     }
 
-    void lavUdlejning() {
+    void lavOrdre() {
 
          int kundeID = 1;
         try {
