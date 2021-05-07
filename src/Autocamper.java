@@ -1,3 +1,4 @@
+
 public class Autocamper {
 
     int autocamperID;
