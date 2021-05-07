@@ -224,7 +224,7 @@ public class Controller {
         }
 
         void ordreHistorik() {
-        udlejningsList.clear();
+            udlejningsList.clear();
 
             try {
                 Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -237,7 +237,7 @@ public class Controller {
                 while (rs.next()) {
                     udlejningsList.add(new Udlejning
                             (Integer.parseInt(rs.getString("fldOrdreID")), rs.getString("fldStartDato"),
-                                    rs.getString("fldSlutDato"),Integer.parseInt(rs.getString("fldAutoCamperID")),
+                                    rs.getString("fldSlutDato"), Integer.parseInt(rs.getString("fldAutoCamperID")),
                                     Integer.parseInt(rs.getString("fldKundeID"))));
                 }
 
@@ -255,7 +255,6 @@ public class Controller {
             udlejningsObservableList = udlejningsList;
 
             tblViewOrdreList.setItems(udlejningsObservableList);
-
         }
 
 }
